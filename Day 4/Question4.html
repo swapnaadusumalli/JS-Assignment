@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript </title>
+        <meta charset="UTF-8">
+          </head>
+    <body>
+        <script>
+         let number1=+prompt("Enter the number1")
+         let number2=+prompt("Enter the number1")
+         let operator=prompt("Enter the operation like Addtion, Subtraction, Multiplication, Division, Square root, Percentage")
+let resultNum;
+		   // Perform operation
+           switch (operator) {
+      case "Addtion":
+        resultNum = number1 + number2;
+        break;
+
+      case "Subtraction":
+        resultNum = number1 - number2;
+        break;
+
+      case "Multiplication":
+        resultNum = number1 * number2;
+        break;
+
+      case "Division":
+        resultNum = number1 / number2;
+        break;
+    case "Square root":
+        resultNum =  Math.sqrt(number1);
+        break;
+        case "Percentage":
+        resultNum = (number1 / number2) * 100;
+        break;
+
+        // If equal is pressed without an operator, keep number and continue
+      default:
+        resultNum = theNum;
+    }
+
+console.log("the output is :",resultNum)
+        </script>
+       
+    </body>
+</html>
