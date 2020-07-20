@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript </title>
+        <meta charset="UTF-8">
+                
+    </head>
+    <body>
+        <script>
+let number1=+prompt("Enter the number1")
+console.log(number1)
+let filledArray=[];
+for(let i=0; i<number1;i++){
+        console.log("i",i);
+    filledArray.push(i);
+}
+
+console.log(filledArray);
+
+let odd = filledArray.filter(el=>el%2!=0);
+console.log(" odd numbers are  ",odd);
+
+let evenSquares = odd.filter(el=>el%2==0).map(el=>el**3);
+console.log(" odd numbers areevenSquares  ",evenSquares);
+
+let cube = odd.map((el)=>el**3);
+console.log(" cube: ",cube);
+        </script>
+       
+    </body>
+</html>
