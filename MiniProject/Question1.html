@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript ASSI DAY 4  </title>
+        <meta charset="UTF-8">
+                
+    </head>
+    <body>
+        <script>
+       function addNotes() {
+	var input = document.getElementById('user_input').value;
+	if (input == "") {
+		window.alert("You must enter a value in the New Task field.");
+	}
+	else {
+		var noteList = document.getElementById('note_List');
+		 noteList.innerHTML += "<li><span>" + input + "</span><button onclick='this.parentNode.parentNode.removeChild(this.parentNode)' class='delete'>Delete</button> </li>";
+		 (function() {
+
+  var demo = document.querySelector('.notes-block');
+  function supportsLocalStorage() {
+    return typeof(Storage)!== 'undefined';
+  }
+  if (!supportsLocalStorage()) {
+    demo.innerHTML = 'No HTML5 localStorage support, soz.';
+
+  } else {
+
+      setTimeout(function() {
+        localStorage.setItem('autosave', demo.innerHTML);
+           demo.innerHTML = "";
+             setTimeout(function() {
+       
+         if (localStorage.getItem('autosave')) {
+      demo.innerHTML = localStorage.getItem('autosave');
+      //alert(demo.innerHTML);
+    } }, 1000);
+      }, 1000);
+
+
+   
+
+  }
+
+})();
+	}
+}
+        </script>
+       <section class="body_container clearfix notes-section">
+        <div class="layout clearfix">
+            Enter The Text<input id="user_input" name="user_input" placeholder="Enter your new note" type="text" />
+            <button value="Add" id="add" onclick="addNotes()">New</button>
+            <ul id="note_List" class="notes-block"></ul>
+        </div>
+    </section> 
+    </body>
+</html>
